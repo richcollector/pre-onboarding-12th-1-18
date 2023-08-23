@@ -13,7 +13,11 @@
 # - style: (코드의 수정 없이) 스타일(style)만 변경(들여쓰기 같은 포맷이나 세미콜론을 빼먹은 경우)
 # - refactor: 코드를 리펙토링
 # - test: Test 관련한 코드의 추가, 수정
-# - chore: (코드의 수정 없이) 설정을 변경
+# - design: CSS 등 사용자 UI 디자인 변경
+# - comment: 필요한 주석 추가 및 변경
+# - rename: 파일 혹은 폴더명을 수정하거나 옮기는 작업만인 경우
+# - remove: 파일을 삭제하는 작업만 수행한 경우
+# - !HOTFIX: 급하게 치명적인 버그를 고쳐야하는 경우
 # 5. '!': 급한 변경 사항인 경우에 추가 (접두사, () 뒤 / 콜론 이전)
 # 6. (): 추가 요약 정보가 필요할 경우 (접두사 뒤 / !, 콜론 이전)
 
@@ -41,7 +45,11 @@ if [ $RES == "needCheck" ]; then
      [[ ! $FIRST_LINE =~ ^(style(\(.*\))?!?: ) ]] &&
      [[ ! $FIRST_LINE =~ ^(refactor(\(.*\))?!?: ) ]] &&
      [[ ! $FIRST_LINE =~ ^(test(\(.*\))?!?: ) ]] &&
-     [[ ! $FIRST_LINE =~ ^(chore(\(.*\))?!?: ) ]]; then
+     [[ ! $FIRST_LINE =~ ^(design(\(.*\))?!?: ) ]] &&
+     [[ ! $FIRST_LINE =~ ^(comment(\(.*\))?!?: ) ]] &&
+     [[ ! $FIRST_LINE =~ ^(rename(\(.*\))?!?: ) ]] &&
+     [[ ! $FIRST_LINE =~ ^(remove(\(.*\))?!?: ) ]] &&
+     [[ ! $FIRST_LINE =~ ^(!HOTFIX(\(.*\))?!?: ) ]]; then
     RES="lintError2"
   fi
 
