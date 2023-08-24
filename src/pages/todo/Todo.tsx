@@ -1,14 +1,14 @@
 import { type FormEvent, useEffect, useState } from 'react';
 import * as S from '../../utils/styles/Todo.styles';
 import useInputs from '../../hooks/useInputs';
-import type { Todo, TodoForm } from '../../utils/types/Todo.interface';
+import type { TypeTodo, TodoForm } from '../../utils/types/Todo.interface';
 import { todoApi } from '../../api/TodoApi';
 import TodoItem from './TodoItem';
 import { useNavigate } from 'react-router';
 import { removeToken } from '../../utils/token/Token';
 
 export default function TodoPage() {
-	const [todos, setTodos] = useState<Todo[]>([]);
+	const [todos, setTodos] = useState<TypeTodo[]>([]);
 	const initialValue = { todo: '' };
 	const { data, handleChange, reset } = useInputs(initialValue);
 	const { todo: todoValue } = data as TodoForm;

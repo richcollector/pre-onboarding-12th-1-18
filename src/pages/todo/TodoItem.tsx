@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
-import { Todo } from '../../utils/types/Todo.interface';
+import { TypeTodo } from '../../utils/types/Todo.interface';
 import * as S from '../../utils/styles/Todo.styles';
 import { todoApi } from '../../api/TodoApi';
 
@@ -7,8 +7,8 @@ export default function TodoItem({
 	todo,
 	setTodos,
 }: {
-	todo: Todo;
-	setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+	todo: TypeTodo;
+	setTodos: React.Dispatch<React.SetStateAction<TypeTodo[]>>;
 }) {
 	const { id, todo: todoText, isCompleted } = todo;
 	const [isEdit, setIsEdit] = useState(false);
