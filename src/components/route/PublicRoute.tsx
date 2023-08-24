@@ -1,7 +1,8 @@
 import { Navigate, Outlet } from 'react-router-dom';
+import { getToken } from '../../utils/token/Token';
 
 const PublicRoute = () => {
-	const isAuth = localStorage.getItem('token');
+	const isAuth = getToken();
 	return !isAuth ? <Outlet /> : <Navigate to="/todo" />;
 };
 
