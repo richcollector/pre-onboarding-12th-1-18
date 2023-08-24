@@ -1,10 +1,10 @@
 import * as S from '../../utils/styles/Sign.styles';
-import ROUTES from '../../utils/constants/routes';
+import ROUTES from '../../utils/constants/Routes';
 import useInputs from '../../hooks/useInputs';
 import { AuthForm } from '../../utils/types/Auth.interface';
-import { isValidEmail, isValidPassword } from '../../utils/validations/validation';
+import { isValidEmail, isValidPassword } from '../../utils/validations/Validation';
 import { useNavigate } from 'react-router';
-import { authApi } from '../../api/authApi';
+import { authApi } from '../../api/AuthApi';
 import { FormEvent } from 'react';
 
 export default function SignUpPage() {
@@ -21,8 +21,8 @@ export default function SignUpPage() {
 			await authApi.signup({ email, password });
 			reset();
 			navigate('/signin');
-		} catch (error: any) {
-			alert(error.message);
+		} catch (error) {
+			if (error instanceof Error) alert(error.message);
 		}
 	};
 

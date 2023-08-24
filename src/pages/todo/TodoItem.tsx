@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import { Todo } from '../../utils/types/Todo.interface';
 import * as S from '../../utils/styles/Todo.styles';
-import { todoApi } from '../../api/todoApi';
+import { todoApi } from '../../api/TodoApi';
 
 export default function TodoItem({
 	todo,

@@ -2,7 +2,7 @@ import { type FormEvent, useEffect, useState } from 'react';
 import * as S from '../../utils/styles/Todo.styles';
 import useInputs from '../../hooks/useInputs';
 import type { Todo, TodoForm } from '../../utils/types/Todo.interface';
-import { todoApi } from '../../api/todoApi';
+import { todoApi } from '../../api/TodoApi';
 import TodoItem from './TodoItem';
 import { useNavigate } from 'react-router';
 import { removeToken } from '../../utils/token/Token';

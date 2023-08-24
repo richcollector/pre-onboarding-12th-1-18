@@ -38,7 +38,7 @@ export const BtnBox = styled.div`
 	gap: 30px;
 
 	width: 100%;
-	height: 150px;
+	height: 200px;
 `;
 
 export const Btn = styled.button`

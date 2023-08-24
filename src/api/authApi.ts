@@ -1,10 +1,10 @@
-import API_ENDPOINTS from '../utils/endpoint/api';
+import API_ENDPOINTS from '../utils/constants/ApiEndPoint';
 import { AuthForm, Auth } from '../utils/types/Auth.interface';
 import { setToken } from '../utils/token/Token';
-import { callApi } from './api';
+import { callApi } from './Api';
 
 export const authApi = {
-	signup: async ({ email, password }: AuthForm): Promise<any> => {
+	signup: async ({ email, password }: AuthForm): Promise<void> => {
 		const data = { email, password };
 		await callApi(API_ENDPOINTS.SIGNUP, 'POST', data);
 	},

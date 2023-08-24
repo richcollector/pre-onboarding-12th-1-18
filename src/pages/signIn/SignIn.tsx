@@ -1,11 +1,11 @@
 import * as S from '../../utils/styles/Sign.styles';
-import ROUTES from '../../utils/constants/routes';
+import ROUTES from '../../utils/constants/Routes';
 import { useNavigate } from 'react-router';
 import useInputs from '../../hooks/useInputs';
-import { isValidEmail, isValidPassword } from '../../utils/validations/validation';
+import { isValidEmail, isValidPassword } from '../../utils/validations/Validation';
 import { AuthForm } from '../../utils/types/Auth.interface';
 import { FormEvent } from 'react';
-import { authApi } from '../../api/authApi';
+import { authApi } from '../../api/AuthApi';
 
 export default function SignInPage() {
 	const navigate = useNavigate();
@@ -21,8 +21,8 @@ export default function SignInPage() {
 			await authApi.signin({ email, password });
 			reset();
 			navigate('/todo');
-		} catch (error: any) {
-			alert(error.message);
+		} catch (error) {
+			if (error instanceof Error) alert(error.message);
 		}
 	};
 	return (

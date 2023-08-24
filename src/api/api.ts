@@ -45,8 +45,10 @@ const handleResponse = async (response: Response) => {
 			const responseData = await response.json();
 			return responseData;
 		}
-	} catch (error: any) {
-		const errorData = await response.json();
-		throw new Error(errorData.message || response.statusText);
+	} catch (error) {
+		if (error instanceof Error) {
+			const errorData = await response.json();
+			throw new Error(errorData.message || response.statusText);
+		}
 	}
 };

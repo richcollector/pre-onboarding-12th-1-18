@@ -1,6 +1,6 @@
-import API_ENDPOINTS from '../utils/endpoint/api';
+import API_ENDPOINTS from '../utils/constants/ApiEndPoint';
 import * as Todo from '../utils/types/Todo.interface';
-import { callApi } from './api';
+import { callApi } from './Api';
 
 export const todoApi = {
 	createTodo: async (newTodo: string): Promise<Todo.TypeTodo> => {

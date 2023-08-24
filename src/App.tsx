@@ -1,9 +1,9 @@
 import { Suspense, lazy } from 'react';
 import { Global } from '@emotion/react';
-import { globalStyles } from './utils/styles/globalStyles';
+import { globalStyles } from './utils/styles/GlobalStyles';
 import { Routes, Route } from 'react-router-dom';
 
-import ROUTES from './utils/constants/routes';
+import ROUTES from './utils/constants/Routes';
 import AuthRoute from './components/route/AuthRoute';
 import PublicRoute from './components/route/PublicRoute';
 
@@ -21,8 +21,8 @@ function App() {
 			<Layout>
 				<Suspense fallback="...Loading">
 					<Routes>
+						<Route path={ROUTES.MAIN} element={<MainPage />} />
 						<Route element={<PublicRoute />}>
-							<Route path={ROUTES.MAIN} element={<MainPage />} />
 							<Route path={ROUTES.SIGNUP} element={<SignUpPage />} />
 							<Route path={ROUTES.SIGNIN} element={<SignInPage />} />
 						</Route>
