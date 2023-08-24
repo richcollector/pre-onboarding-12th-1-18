@@ -6,27 +6,14 @@ import { isValidEmail, isValidPassword } from '../../utils/Validation';
 import useInputs from '../../hooks/useInputs';
 
 function SignUp() {
-	// const [email, setEmail] = useState<string>('');
-	// const [password, setPassword] = useState<string>('');
 	const initialValue = { email: '', password: '' };
 	const { formData, handleChange, reset } = useInputs(initialValue);
 	const { email, password } = formData;
 
 	const navigate = useNavigate();
 
-	// const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-	// 	const { value } = e.target;
-	// 	setEmail(value);
-	// };
-
-	// const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-	// 	const { value } = e.target;
-	// 	setPassword(value);
-	// };
-
 	const handleSignupBtnClick = async () => {
 		try {
-			// await authApi.signUp({ email, password });
 			await authApi.signUp(formData);
 			reset();
 			navigate(ROUTES.SIGNIN);
