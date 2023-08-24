@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ROUTES from './constants/Routes';
+import ROUTES from './utils/constants/Routes';
 import { lazy, Suspense } from 'react';
 
 const Main = lazy(() => import('./pages/Main'));

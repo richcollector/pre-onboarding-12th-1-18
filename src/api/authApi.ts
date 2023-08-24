@@ -1,5 +1,5 @@
 import * as Api from './Api';
-import Auth from '../interfaces/Auth.interface';
+import Auth from '../utils/interfaces/Auth.interface';
 
 const API_URL = 'https://www.pre-onboarding-selection-task.shop';
 

@@ -1,5 +1,5 @@
 import * as Api from './Api';
-import * as Todo from '../interfaces/Todo.interface';
+import * as Todo from '../utils/interfaces/Todo.interface';
 
 const API_URL = 'https://www.pre-onboarding-selection-task.shop';
 

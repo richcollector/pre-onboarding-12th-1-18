@@ -1,6 +1,6 @@
 //import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ROUTES from '../../constants/Routes';
+import ROUTES from '../../utils/constants/Routes';
 import * as authApi from '../../api/authApi';
 import { isValidEmail, isValidPassword } from '../../utils/Validation';
 import useInputs from '../../hooks/useInputs';
