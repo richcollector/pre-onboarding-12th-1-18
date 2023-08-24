@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Suspense, lazy } from 'react';
+import { Global } from '@emotion/react';
+import { globalStyles } from './utils/styles/GlobalStyles';
+import { Routes, Route } from 'react-router-dom';
+
+import ROUTES from './utils/constants/Routes';
+import AuthRoute from './components/route/AuthRoute';
+import PublicRoute from './components/route/PublicRoute';
+
+import Layout from './components/layout/Layout';
+const MainPage = lazy(() => import('./pages/main/Main'));
+const SignUpPage = lazy(() => import('./pages/signUp/SignUp'));
+const SignInPage = lazy(() => import('./pages/signIn/SignIn'));
+const TodoPage = lazy(() => import('./pages/todo/Todo'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
+		<>
+			<Global styles={globalStyles} />
+			<Layout>
+				<Suspense fallback="...Loading">
+					<Routes>
+						<Route path={ROUTES.MAIN} element={<MainPage />} />
+						<Route element={<PublicRoute />}>
+							<Route path={ROUTES.SIGNUP} element={<SignUpPage />} />
+							<Route path={ROUTES.SIGNIN} element={<SignInPage />} />
+						</Route>
+						<Route element={<AuthRoute />}>
+							<Route path={ROUTES.TODO} element={<TodoPage />} />
+						</Route>
+						<Route path="*" element={<NotFoundPage />} />
+					</Routes>
+				</Suspense>
+			</Layout>
+		</>
 	);
 }
 
