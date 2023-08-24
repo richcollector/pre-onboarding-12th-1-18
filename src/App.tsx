@@ -1,25 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Suspense } from 'react';
+import { Global } from '@emotion/react';
+import { globalStyles } from './styles/globalStyles';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Loader from './components/layout/Loader';
+
+import { lazy } from 'react';
+import PublicRoute from './components/route/PublicRoute';
+import AuthRoute from './components/route/AuthRoute';
+
+// 동적으로 불러오기 위한 lazy 사용
+const Layout = lazy(() => import('./components/layout/Layout'));
+const SignUp = lazy(() => import('./pages/SignUp'));
+const SignIn = lazy(() => import('./pages/SignIn'));
+const TodoList = lazy(() => import('./pages/TodoList'));
+const Main = lazy(() => import('./pages/Main'));
+
+function ThemeRoutes() {
+	return (
+		<BrowserRouter>
+			<Global styles={globalStyles} />
+			<Layout>
+				<Routes>
+					<Route element={<PublicRoute />}>
+						<Route path="/" element={<Main />} />
+						<Route path="/signin" element={<SignIn />} />
+						<Route path="/signup" element={<SignUp />} />
+					</Route>
+					<Route element={<AuthRoute />}>
+						<Route path="/todo" element={<TodoList />} />
+					</Route>
+				</Routes>
+			</Layout>
+		</BrowserRouter>
+	);
+}
 
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
+		<Suspense fallback={<Loader />}>
+			<ThemeRoutes />
+		</Suspense>
 	);
 }
 
