@@ -34,6 +34,10 @@ async function request<T>({
 		const response = await fetch(apiUrl, fetchOptions);
 		const contentLength = response.headers.get('Content-Length');
 
+		if (!response.ok) {
+			throw new Error('요청이 실패하였습니다.');
+		}
+
 		if (contentLength === null || contentLength === '0') {
 			// @ts-ignore
 			return;

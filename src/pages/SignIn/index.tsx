@@ -1,31 +1,35 @@
-import React, { useState } from 'react';
+//import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ROUTES from '../../constants/Routes';
 import * as authApi from '../../api/authApi';
 import { setToken } from '../../utils/Token';
 import { isValidEmail, isValidPassword } from '../../utils/Validation';
-//import useInputs from '../../hooks/useInputs';
+import useInputs from '../../hooks/useInputs';
 
 function SignIn() {
-	const [email, setEmail] = useState<string>('');
-	const [password, setPassword] = useState<string>('');
+	// const [email, setEmail] = useState<string>('');
+	// const [password, setPassword] = useState<string>('');
+	const initialValue = { email: '', password: '' };
+	const { formData, handleChange, reset } = useInputs(initialValue);
+	const { email, password } = formData;
 
 	const navigate = useNavigate();
 
-	const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const { value } = e.target;
-		setEmail(value);
-	};
+	// const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	// 	const { value } = e.target;
+	// 	setEmail(value);
+	// };
 
-	const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const { value } = e.target;
-		setPassword(value);
-	};
+	// const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	// 	const { value } = e.target;
+	// 	setPassword(value);
+	// };
 
 	const handleSigninBtnClick = async () => {
 		try {
-			const res = await authApi.signIn({ email, password });
+			const res = await authApi.signIn(formData);
 			setToken(res.access_token);
+			reset();
 			navigate(ROUTES.TODOLIST);
 		} catch (err) {
 			alert('로그인에 실패하였습니다.');
@@ -42,10 +46,11 @@ function SignIn() {
 				<span>이메일</span>
 				<input
 					data-testid="email-input"
-					type="text"
+					type="email"
+					name="email"
 					placeholder="이메일을 입력해주세요"
 					value={email}
-					onChange={handleEmailChange}
+					onChange={handleChange}
 				></input>
 			</div>
 			<div>
@@ -53,9 +58,10 @@ function SignIn() {
 				<input
 					data-testid="password-input"
 					type="password"
+					name="password"
 					placeholder="비밀번호를 입력해주세요"
 					value={password}
-					onChange={handlePasswordChange}
+					onChange={handleChange}
 				></input>
 			</div>
 			<div>

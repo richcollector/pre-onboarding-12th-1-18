@@ -7,6 +7,13 @@ import Todo from './pages/TodoList';
 import AuthRoute from './components/Route/AuthRoute';
 import PublicRoute from './components/Route/PublicRoute';
 
+// import { lazy } from 'react';
+
+// const Main = lazy(() => import('./pages/Main'));
+// const SignUp = lazy(() => import('./pages/SignUp'));
+// const SignIn = lazy(() => import('./pages/SignIn'));
+// const Todo = lazy(() => import('./pages/TodoList'));
+
 function App() {
 	return (
 		<BrowserRouter>
