@@ -6,3 +6,9 @@ export interface AuthForm {
 export interface TodoForm {
 	todo: string;
 }
+
+export interface Todo {
+	id: number;
+	todo: string;
+	isCompleted: boolean;
+}
