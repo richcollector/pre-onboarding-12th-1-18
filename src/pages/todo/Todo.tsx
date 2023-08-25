@@ -47,21 +47,19 @@ export default function TodoPage() {
 			</S.LogoutBox>
 			<S.LogoBox>
 				<S.ImgBox src="/logo.png" />
-				<S.ToDoTile>To-Do List</S.ToDoTile>
+				<S.ToDoTitle>To-Do List</S.ToDoTitle>
 			</S.LogoBox>
 
-			<form onSubmit={handleClickAddBtn}>
-				<S.InputBox>
-					<S.InsertInput
-						name="todo"
-						data-testid="new-todo-input"
-						onChange={handleChange}
-						value={todoValue}
-						type="text"
-					/>
-					<S.InputBtn data-testid="new-todo-add-button">추가</S.InputBtn>
-				</S.InputBox>
-			</form>
+			<S.FormBox onSubmit={handleClickAddBtn}>
+				<S.InsertInput
+					name="todo"
+					data-testid="new-todo-input"
+					onChange={handleChange}
+					value={todoValue}
+					type="text"
+				/>
+				<S.InputBtn data-testid="new-todo-add-button">추가</S.InputBtn>
+			</S.FormBox>
 			<S.ListBox>
 				{todos.map(todo => (
 					<TodoItem key={todo.id} todo={todo} setTodos={setTodos} />

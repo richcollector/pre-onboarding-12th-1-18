@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const TodoBox = styled.div`
+export const TodoBox = styled.main`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -45,13 +45,13 @@ export const ImgBox = styled.img`
 	height: 200px;
 `;
 
-export const ToDoTile = styled.div`
+export const ToDoTitle = styled.h1`
 	position: absolute;
 	font-size: 25px;
 	color: white;
 `;
 
-export const InputBox = styled.div`
+export const FormBox = styled.form`
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -78,7 +78,7 @@ export const InputBtn = styled.button`
 	cursor: pointer;
 `;
 
-export const ListBox = styled.div`
+export const ListBox = styled.ul`
 	width: 100%;
 	height: 200px;
 
@@ -86,7 +86,7 @@ export const ListBox = styled.div`
 	overflow-y: scroll;
 `;
 
-export const ListItem = styled.div`
+export const ListItem = styled.li`
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -126,4 +126,5 @@ export const ItemInput = styled.input`
 export const ItemBtn = styled.button`
 	height: 40px;
 	width: 50px;
+	margin: 6px;
 `;

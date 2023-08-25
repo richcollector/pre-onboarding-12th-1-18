@@ -58,42 +58,42 @@ export default function TodoItem({
 	return (
 		<>
 			<S.ListItem>
-				<li style={{ width: '100%', textAlign: 'center' }}>
-					<label>
-						<S.ItemCheckBox checked={isCompleted} onChange={handleCheckBoxChange} type="checkbox" />
-						{isEdit ? (
-							<S.ItemInput
-								data-testid="modify-input"
-								id="modify-input"
-								name="modify-input"
-								type="text"
-								value={editTodoInput}
-								onChange={handleChange}
-							/>
-						) : (
-							<S.ItemSpan>{todo.todo}</S.ItemSpan>
-						)}
-					</label>
+				{/* <li style={{ width: '100%', textAlign: 'center' }}> */}
+				<label>
+					<S.ItemCheckBox checked={isCompleted} onChange={handleCheckBoxChange} type="checkbox" />
 					{isEdit ? (
-						<>
-							<S.ItemBtn data-testid="submit-button" onClick={onClickSubmitBtn}>
-								제출
-							</S.ItemBtn>
-							<S.ItemBtn data-testid="cancel-button" onClick={onClickCancleBtn}>
-								취소
-							</S.ItemBtn>
-						</>
+						<S.ItemInput
+							data-testid="modify-input"
+							id="modify-input"
+							name="modify-input"
+							type="text"
+							value={editTodoInput}
+							onChange={handleChange}
+						/>
 					) : (
-						<>
-							<S.ItemBtn data-testid="modify-button" onClick={onClickEditStatus}>
-								수정
-							</S.ItemBtn>
-							<S.ItemBtn data-testid="delete-button" onClick={onClickeRemoveTodo}>
-								삭제
-							</S.ItemBtn>
-						</>
+						<S.ItemSpan>{todo.todo}</S.ItemSpan>
 					)}
-				</li>
+				</label>
+				{isEdit ? (
+					<>
+						<S.ItemBtn data-testid="submit-button" onClick={onClickSubmitBtn}>
+							제출
+						</S.ItemBtn>
+						<S.ItemBtn data-testid="cancel-button" onClick={onClickCancleBtn}>
+							취소
+						</S.ItemBtn>
+					</>
+				) : (
+					<>
+						<S.ItemBtn data-testid="modify-button" onClick={onClickEditStatus}>
+							수정
+						</S.ItemBtn>
+						<S.ItemBtn data-testid="delete-button" onClick={onClickeRemoveTodo}>
+							삭제
+						</S.ItemBtn>
+					</>
+				)}
+				{/* </li> */}
 			</S.ListItem>
 		</>
 	);
