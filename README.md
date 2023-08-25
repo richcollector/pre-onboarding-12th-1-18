@@ -33,17 +33,22 @@ $ npm start
 - 최종 결과물 도출
 
 ## 🔧 기술 스택
-<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/awsamplify-FF9900?style=for-the-badge&logo=awsamplify&logoColor=white"> <img src="https://img.shields.io/badge/emotion-FE5196?style=for-the-badge&logo=emotion&logoColor=white">
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/awsamplify-FF9900?style=for-the-badge&logo=awsamplify&logoColor=white"> <img src="https://img.shields.io/badge/emotion-FE5196?style=for-the-badge&logo=emotion&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white">
 
 ## 🔨 협업 Tool
 
-- 노션
-    - 팀 컨벤션, 회의 내용 기록
-    - 각자 과제에 대한 설명 및 기술
-- 디스코드
-    - 회의 및 공지
+<img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
 
-## 🎈 Best Practice 회의
+- 팀 컨벤션, 회의 내용 기록
+- 각자 과제에 대한 설명 및 기술
+<img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
+
+- 회의 및 공지
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+
+- 이슈 작성 및 코드 리뷰
+
+## 🎈 Best Practice 선정
 
 - [Todo-List](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/13)
 - [로그인 / 회원가입](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/12)
