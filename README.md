@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+## 📚 과제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+동료학습을 통해서 팀에서 생각한 원티드 프리온보딩 프론트엔드 [인턴십 선발 과제](https://github.com/walking-sunset/selection-task)의 Best Pratice를 만들고 제출해주세요.
 
-In the project directory, you can run:
+> Best Practice란 팀원들이 각자의 구현 방법을 설명하고 토론했을 때 팀 안에서 이 방법이 가장 효율적이라고 판단되는 것
+> 
 
-### `npm start`
+## 🚀실행 방법
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```jsx
+$ npm install
+$ npm start
+```
 
-### `npm test`
+✌️ 개인의 서버에 올린 작업물로 2023년 10월부터는 접속이 불가 할 수 있는 점 양해바랍니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+(배포된 팀 프로젝트 - Todo-List)[https://main.d38gez3r418jap.amplifyapp.com/]
 
-### `npm run build`
+- 동작 영상
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔥 과제 수행 방식
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 협업 Tool 선정
+- 사전에 수행한 과제 리뷰 및 구현 방법 발표
+- [환경 설정 및 팀 컨벤션](https://www.notion.so/6f1672b3a1d84338beb3e00069466ab7?pvs=21) 결정 (EsLint / Prettier)
+- Best Practice 선정을 위한 [논의 사항](https://www.notion.so/Best-practice-8db4b896a9834d0f94e8848f250e2e8d?pvs=21) 토론 및 Best Practice 도출
+- Best Practice 기반 리팩토링
+- 리팩토링 코드 리뷰 및 재토론
+- 최종 결과물 도출
 
-### `npm run eject`
+## 🔨 협업 Tool
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 노션
+    - 팀 컨벤션, 회의 내용 기록
+    - 각자 과제에 대한 설명 및 기술
+- 디스코드
+    - 회의 및 공지
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🎈 Best Practice 회의
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+- eslint, pretteir, husky, lint-staged 설정
+- emotion 설치 및 글로벌 css 설정
+- 라우팅 설정
+- 폴더 구조 아키텍쳐 생성
+- 커스텀 훅 및 유틸 함수 사용
+- API 설정 : api.ts, authApi.ts, todoApi.ts 파일 생성
+- 로그인 / 회원가입
+- Todo-List
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+(세부 논의 사항 참고)[https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues]
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ❓ 기타 변경사항
+
+---
+
+- div 태그 → 시멘틱 태그로 변경
