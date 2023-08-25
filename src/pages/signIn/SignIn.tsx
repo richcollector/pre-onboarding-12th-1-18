@@ -22,64 +22,60 @@ export default function SignInPage() {
 			reset();
 			navigate('/todo');
 		} catch (error) {
-			if (error instanceof Error) alert(error.message);
+			if (error instanceof Error) alert('로그인 정보가 틀렸습니다. 다시 입력해주세요.');
 		}
 	};
 	return (
-		<>
-			<form onSubmit={handleClickSignIn}>
-				<S.SignWrapper>
-					<S.SignBox>
-						<S.SignLink to={ROUTES.SIGNUP}>회원가입</S.SignLink>
-					</S.SignBox>
-					<S.LogoBox>
-						<S.ImgBox src="/logo.png" />
-						<S.ToDoTile>SignIn Page</S.ToDoTile>
-					</S.LogoBox>
-					<S.FormBox>
-						<S.InputBox>
-							<S.Input
-								data-testid="email-input"
-								type="email"
-								name="email"
-								placeholder="이메일을 입력해주세요."
-								onChange={handleChange}
-								value={email}
-								autoComplete="off"
-							/>
-							<S.ErrorBox>
-								{!isValidEmail(email) && (
-									<span className="error-message">이메일 형식을 지켜주세요.</span>
-								)}
-							</S.ErrorBox>
-							<S.Input
-								data-testid="password-input"
-								type="password"
-								name="password"
-								placeholder="비밀번호를 입력해주세요."
-								onChange={handleChange}
-								value={password}
-							/>
-							<S.ErrorBox>
-								{!isValidPassword(password) && (
-									<span className="error-message">비밀번호는 8자 이상 입력해주세요.</span>
-								)}
-							</S.ErrorBox>
-						</S.InputBox>
-						<S.LogBox>
-							<S.LogBtn
-								data-testid="signin-button"
-								style={{
-									backgroundColor: isValidEmail(email) && isValidPassword(password) ? 'yellow' : '',
-								}}
-								disabled={!isValidEmail(email) || !isValidPassword(password)}
-							>
-								로그인하기
-							</S.LogBtn>
-						</S.LogBox>
-					</S.FormBox>
-				</S.SignWrapper>
-			</form>
-		</>
+		<S.SignWrapper>
+			<S.SignBox>
+				<S.SignLink to={ROUTES.SIGNUP}>회원가입</S.SignLink>
+			</S.SignBox>
+			<S.LogoBox>
+				<S.ImgBox src="/logo.png" />
+				<S.ToDoTitle>SignIn Page</S.ToDoTitle>
+			</S.LogoBox>
+			<S.FormBox onSubmit={handleClickSignIn}>
+				<S.InputBox>
+					<S.Input
+						data-testid="email-input"
+						type="email"
+						name="email"
+						placeholder="이메일을 입력해주세요."
+						onChange={handleChange}
+						value={email}
+						autoComplete="off"
+					/>
+					<S.ErrorBox>
+						{!isValidEmail(email) && (
+							<span className="error-message">이메일 형식을 지켜주세요.</span>
+						)}
+					</S.ErrorBox>
+					<S.Input
+						data-testid="password-input"
+						type="password"
+						name="password"
+						placeholder="비밀번호를 입력해주세요."
+						onChange={handleChange}
+						value={password}
+					/>
+					<S.ErrorBox>
+						{!isValidPassword(password) && (
+							<span className="error-message">비밀번호는 8자 이상 입력해주세요.</span>
+						)}
+					</S.ErrorBox>
+				</S.InputBox>
+				<S.LogBox>
+					<S.LogBtn
+						data-testid="signin-button"
+						style={{
+							backgroundColor: isValidEmail(email) && isValidPassword(password) ? 'yellow' : '',
+						}}
+						disabled={!isValidEmail(email) || !isValidPassword(password)}
+					>
+						로그인하기
+					</S.LogBtn>
+				</S.LogBox>
+			</S.FormBox>
+		</S.SignWrapper>
 	);
 }

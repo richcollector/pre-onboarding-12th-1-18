@@ -1,14 +1,12 @@
-export interface Todo {
+export interface TypeTodo {
 	id: number;
 	todo: string;
 	isCompleted: boolean;
 	userId?: number;
 }
 
-export type TypeTodo = Todo;
-
-export type TypeUpdateTodo = Pick<Todo, 'todo' | 'isCompleted'>;
-
-export type TodoForm = {
+export interface TodoForm {
 	todo: string;
-};
+}
+
+export type TypeUpdateTodo = Pick<TypeTodo, 'todo' | 'isCompleted'>;
