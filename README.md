@@ -16,10 +16,10 @@ $ npm start
 
 ✌️ 개인의 서버에 올린 작업물로 2023년 10월부터는 접속이 불가 할 수 있는 점 양해바랍니다.
 
-[배포된 팀 프로젝트 링크 - Todo-List](https://main.d38gez3r418jap.amplifyapp.com/)
+[배포 링크 - Todo-List](https://main.d38gez3r418jap.amplifyapp.com/)
 
 ### 동작 영상
-<img width='450px' src='https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/assets/72495998/3550765a-cd2c-460f-8715-d80fcc88b7a2' alt='원티드-18팀-1차과제' />
+<img width='450px' src='https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/assets/72495998/43499e3b-47e2-4cec-9478-222e6b07ada9' alt='원티드-18팀-1차과제' />
 
 
 ## 🔥 과제 수행 방식
