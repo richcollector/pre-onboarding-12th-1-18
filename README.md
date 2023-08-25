@@ -30,8 +30,6 @@ $ npm start
 
 ## 🔨 협업 Tool
 
----
-
 - 노션
     - 팀 컨벤션, 회의 내용 기록
     - 각자 과제에 대한 설명 및 기술
@@ -40,18 +38,14 @@ $ npm start
 
 ## 🎈 Best Practice 회의
 
----
-
-- eslint, pretteir, husky, lint-staged 설정
-- emotion 설치 및 글로벌 css 설정
-- 라우팅 설정
-- 폴더 구조 아키텍쳐 생성
-- 커스텀 훅 및 유틸 함수 사용
-- API 설정 : api.ts, authApi.ts, todoApi.ts 파일 생성
-- 로그인 / 회원가입
-- Todo-List
-
-[세부 논의 사항 참고 이슈](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues)
+- [Todo-List](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/13)
+- [로그인 / 회원가입](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/12)
+- [API 설정 : api.ts, authApi.ts, todoApi.ts 파일 생성](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/11)
+- [커스텀 훅 및 유틸 함수 사용](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/10)
+- [폴더 구조 아키텍쳐 생성](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/9)
+- [라우팅 설정](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/8)
+- [emotion 설치 및 글로벌 css 설정](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/7)
+- [ eslint, pretteir, husky, lint-staged 설정](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/6/)
 
 ## ❓ 기타 변경사항
 
