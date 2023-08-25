@@ -1,11 +1,11 @@
+import { FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router';
 import * as S from '../../utils/styles/Sign.styles';
 import ROUTES from '../../utils/constants/Routes';
 import useInputs from '../../hooks/useInputs';
 import { AuthForm } from '../../utils/types/Auth.interface';
 import { isValidEmail, isValidPassword } from '../../utils/validations/Validation';
-import { useNavigate } from 'react-router';
 import { authApi } from '../../api/AuthApi';
-import { FormEvent } from 'react';
 
 export default function SignUpPage() {
 	const navigate = useNavigate();
@@ -14,6 +14,8 @@ export default function SignUpPage() {
 
 	const { data, handleChange, reset } = useInputs(initialValue);
 	const { email, password } = data as AuthForm;
+	const [showEmailError, setShowEmailError] = useState(false);
+	const [showPasswordError, setShowPasswordError] = useState(false);
 
 	const handleClickSignUp = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -43,27 +45,21 @@ export default function SignUpPage() {
 						name="email"
 						placeholder="이메일을 입력해주세요."
 						onChange={handleChange}
+						onBlur={() => setShowEmailError(!isValidEmail(email))}
 						value={email}
 						autoComplete="off"
 					/>
-					<S.ErrorBox>
-						{!isValidEmail(email) && (
-							<span className="error-message">이메일 형식을 지켜주세요.</span>
-						)}
-					</S.ErrorBox>
+					<S.ErrorBox>{showEmailError && '이메일 형식을 지켜주세요.'}</S.ErrorBox>
 					<S.Input
 						data-testid="password-input"
 						type="password"
 						name="password"
 						placeholder="비밀번호를 입력해주세요."
+						onBlur={() => setShowPasswordError(!isValidPassword(password))}
 						onChange={handleChange}
 						value={password}
 					/>
-					<S.ErrorBox>
-						{!isValidPassword(password) && (
-							<span className="error-message">비밀번호는 8자 이상 입력해주세요.</span>
-						)}
-					</S.ErrorBox>
+					<S.ErrorBox>{showPasswordError && '비밀번호는 8자 이상 입력해주세요.'}</S.ErrorBox>
 				</S.InputBox>
 				<S.LogBox>
 					<S.LogBtn
