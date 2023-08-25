@@ -47,7 +47,7 @@ export default function SignUpPage() {
 						autoComplete="off"
 					/>
 					<S.ErrorBox>
-						{!isValidEmail(email) && (
+						{!isValidEmail(email) && email && (
 							<span className="error-message">이메일 형식을 지켜주세요.</span>
 						)}
 					</S.ErrorBox>
@@ -60,7 +60,7 @@ export default function SignUpPage() {
 						value={password}
 					/>
 					<S.ErrorBox>
-						{!isValidPassword(password) && (
+						{!isValidPassword(password) && password && (
 							<span className="error-message">비밀번호는 8자 이상 입력해주세요.</span>
 						)}
 					</S.ErrorBox>
