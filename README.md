@@ -49,7 +49,7 @@ $ npm start
 
 ## ❓ 기타 변경사항
 
-- div 태그 → 시멘틱 태그로 변경
+- [회원가입/로그인 유효성 검사 메세지 분리 & div태그를 시멘틱 태그로 변경](https://github.com/preOnBorading-Idle/pre-onboarding-12th-1-18/issues/17)
 
 ## ✅ 팀 컨벤션
 - 브랜치 형식
