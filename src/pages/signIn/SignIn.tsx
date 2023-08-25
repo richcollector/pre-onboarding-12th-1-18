@@ -22,7 +22,7 @@ export default function SignInPage() {
 			reset();
 			navigate('/todo');
 		} catch (error) {
-			if (error instanceof Error) alert(error.message);
+			if (error instanceof Error) alert('로그인 정보가 틀렸습니다. 다시 입력해주세요.');
 		}
 	};
 	return (
