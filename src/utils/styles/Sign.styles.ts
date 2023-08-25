@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-export const SignWrapper = styled.div`
+export const SignWrapper = styled.main`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -38,7 +38,7 @@ export const LogoBox = styled.div`
 	height: 200px;
 `;
 
-export const ToDoTile = styled.div`
+export const ToDoTitle = styled.h1`
 	position: absolute;
 	font-size: 25px;
 	color: white;
@@ -49,7 +49,7 @@ export const ImgBox = styled.img`
 	height: 250px;
 `;
 
-export const FormBox = styled.div`
+export const FormBox = styled.form`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -77,7 +77,7 @@ export const Input = styled.input`
 	font-size: 20px;
 `;
 
-export const ErrorBox = styled.div`
+export const ErrorBox = styled.p`
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
