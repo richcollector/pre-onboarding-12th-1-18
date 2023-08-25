@@ -14,6 +14,15 @@ export default function TodoPage() {
 	const { todo: todoValue } = data as TodoForm;
 	const navigate = useNavigate();
 
+	useEffect(() => {
+		const fetchTodos = async () => {
+			const data = await todoApi.getTodo();
+			setTodos(data);
+		};
+
+		fetchTodos();
+	}, []);
+
 	const handleClickAddBtn = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		if (todoValue === '') {
@@ -30,15 +39,6 @@ export default function TodoPage() {
 		removeToken();
 		navigate('/');
 	};
-
-	useEffect(() => {
-		const fetchTodos = async () => {
-			const data = await todoApi.getTodo();
-			setTodos(data);
-		};
-
-		fetchTodos();
-	}, []);
 
 	return (
 		<S.TodoBox>
