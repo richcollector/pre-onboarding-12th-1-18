@@ -32,6 +32,9 @@ $ npm start
 - 리팩토링 코드 리뷰 및 재토론
 - 최종 결과물 도출
 
+## 🔧 기술 스택
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/awsamplify-FF9900?style=for-the-badge&logo=awsamplify&logoColor=white"> <img src="https://img.shields.io/badge/emotion-FE5196?style=for-the-badge&logo=emotion&logoColor=white">
+
 ## 🔨 협업 Tool
 
 - 노션
